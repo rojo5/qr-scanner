@@ -42,7 +42,9 @@ class _HomePageBody extends StatelessWidget {
 
       // ! temporal leer la base de datos
       final tempScan = new ScanModel( tipo: 'http', valor: 'http://google.com');
-      DBProvider.db.nuevoScan(tempScan);
+      // DBProvider.db.nuevoScan(tempScan);
+      // DBProvider.db.getScanById(5).then((scan) => print(scan?.valor));
+      DBProvider.db.getAllScans().then((value) => print(value));
 
     switch (currentIndex) {
       case 0:
