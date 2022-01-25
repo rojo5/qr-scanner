@@ -7,7 +7,7 @@ String scanModelToJson(ScanModel data) => json.encode(data.toJson());
 class ScanModel {
     ScanModel({
         this.id,
-        required this.tipo,
+        this.tipo,
         required this.valor,
     }) {
       if (this.valor.contains('http')) {
@@ -18,7 +18,7 @@ class ScanModel {
     }
 
     int? id;
-    String tipo;
+    String? tipo;
     String valor;
 
     factory ScanModel.fromJson(Map<String, dynamic> json) => ScanModel(
