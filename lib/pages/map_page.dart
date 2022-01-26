@@ -18,16 +18,18 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
 
-    final CameraPosition puntoInicial  = CameraPosition(
-      target: LatLng(37.42961333, -122.0857496),
-      zoom: 14.47
-    );
-
     final ScanModel scan = ModalRoute.of(context)!.settings.arguments as ScanModel;
+
+    final CameraPosition puntoInicial  = CameraPosition(
+      target: scan.getLatLng(),
+      zoom: 17.5,
+      tilt: 50
+    );
 
     return Scaffold(
       body: GoogleMap(
-        mapType: MapType.hybrid,
+        myLocationButtonEnabled: false,
+        mapType: MapType.normal,
         initialCameraPosition: puntoInicial,
         onMapCreated: (GoogleMapController controller) {
 
